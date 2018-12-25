@@ -7,13 +7,12 @@
 
 Rough work :- 
 Trivial Solution:-
-    Step 1 - Sort the array
-    Step 2 - Start with 2 positions i=0 and j=1 .  Add the numbers in these positions and check for k
-    Step 3 - keep doing j+1 till end of the array unless match found(Break and return true and end program)
-    Step 4 - Step 3 no match found, we start from i=i+1 and initializing j to next of i as j=i+1 the repeat step 3
-    Step 5 - return false . End program
+    Step 1 - Start with 2 positions i=0 and j=1 .  Add the numbers in these positions and check for k
+    Step 2 - keep doing j+1 till end of the array unless match found(Break and return true and end program)
+    Step 3 - Step 3 no match found, we start from i=i+1 and initializing j to next of i as j=i+1 the repeat step 3
+    Step 4 - return false . End program
  
- I think O(nlogn) for Sorting and O(n^2) for the logic ~ O(n^2) for this program
+ O(n^2) for the logic
 */
 
 #include <stdio.h>
@@ -22,38 +21,29 @@ Trivial Solution:-
 int main() {
     
     int count = 0, k, i, j;
-    FILE *fileptr;
 
+// Read the Input File
+    FILE *fileptr;
     if ((fileptr = fopen("in_d0001.txt","r")) == NULL){
         printf("Error! opening file");
         exit(1);
     }
-
     fscanf(fileptr,"%d", &count);
-    //printf("Value of n=%d", num);
-    //printf("\n\n Number of integers in the list --> ");
-    //scanf("%d", &count);
-
     int *list = (int*) malloc(count * sizeof(int)); 
-
-    for(i=0; i<count; i++) {
+    for(i=0; i<count; i++)
         fscanf(fileptr,"%d", &list[i]);
-        printf("\nEnter Element Number %d = ", list[i]);  
-    }
-
     fscanf(fileptr,"%d", &k);  
-    //printf("\n\n Please enter K --> ");
-    //scanf("%d", &k);
-
     fclose(fileptr);
 
-    for(i=0; i<count-1; i++)
+// The main Logic
+    for(i=0; i<count-1; i++) {
         for(j=i+1; j<count; j++) {
             if( list[i] + list[j] == k ) {
-                printf("\n Found - Feeling Lucky Punk - ");
+                printf("\n Found - Feeling Lucky Punk - i=%d j=%d",i,j);
                 return 0;
             }
         }
-    printf("\n Nope not here ");
+    }
+    printf("\n Nope not here  i=%d j=%d",i,j);
     return 0;
 }
