@@ -6,13 +6,11 @@
 
 
 Rough work :- 
-Trivial Solution:-
+Trivial Solution:- O(n^2)
     Step 1 - Start with 2 positions i=0 and j=1 .  Add the numbers in these positions and check for k
     Step 2 - keep doing j+1 till end of the array unless match found(Break and return true and end program)
     Step 3 - Step 3 no match found, we start from i=i+1 and initializing j to next of i as j=i+1 the repeat step 3
     Step 4 - return false . End program
- 
- O(n^2) for the logic
 */
 
 #include <stdio.h>
