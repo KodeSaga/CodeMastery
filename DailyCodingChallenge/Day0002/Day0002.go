@@ -22,3 +22,22 @@
 */
 
 package main
+
+import "fmt"
+
+func main() {
+
+    var (
+        product int = 1
+        list = []int
+        i int
+    )
+
+	fmt.Println("Hello World")
+
+	for i = 0; i < count; i++ {
+        p = p * a[i]
+        
+	}
+
+}
